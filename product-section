@@ -1,0 +1,362 @@
+##https://globalpayroll.myshopify.com/collections/e-learning/products/uk-payroll-2017
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% assign count_images = product.images | size %}
+{% assign column_center = 'col-sm-12 col-md-12' %}
+{% assign column_left_product = 'col-xs-12 col-sm-12 col-md-5' %}
+{% assign column_center_product = 'col-xs-12 col-sm-12 col-md-7' %}
+{% assign column_right_product = 'col-xs-12 col-sm-12 col-md-7' %}
+{%comment%}
+ 
+{%endcomment%}
+ 
+<section id="columns" class="columns-container video-product-page">
+  <div class="pagetop">
+    <div class="form-banner payroll-banner">
+      <div class="row">
+        {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+        <div class="left text col-md-6 col-sm-6 text" style="background-image:url({{  featured_image | img_url: 'master' }});">
+          <h1>{{product.title}}</h1>
+          {% assign content = product.content | split: '<div class="page-break"></div>' %} 
+          <p>    {{ content[0] }}  </p>   
+        </div>
+        <div class="right img col-md-6 col-sm-6">          
+          <a href="{{ featured_image | img_url: 'medium' }}" class="zoom" id="placeholder" >
+            <img id="product-featured-image" src="{{ featured_image | img_url: 'master' }}" alt="{{ featured_image.alt | escape }}" data-zoom-image="{{ featured_image.src | img_url: 'master' }}"/>
+          </a>
+        </div>      
+      </div>
+    </div>
+  </div>
+       
+        <div itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+           {%comment%}
+            <div class="pull-vidio-center text-center none">
+              <section id="idTab1" class="tab-pane page-product-box">
+                <p class="col-md-12 color-pasific">
+                  {% assign content = product.content | split: '<div class="page-break"></div>' %}
+                  {{ content[2] }}</p>
+                </section>
+            </div>
+           {%endcomment%}
+                    
+             
+ <ul class="video-product">
+             {% for tags1 in product.tags  %} 
+   
+           
+             {%if tags1 contains '1_video_'  %}
+   <li class="col-md-2 col-sm-3 col-xs-6 vdo">
+              {% assign content = tags1 | split: '_' %}
+              <a class="fancybox fancybox.iframe" href="https://player.vimeo.com/video/{{ content[3] }}?api=1&amp;autoplay=0&amp;loop=1&amp;color=ffffff" id="vimeo_player" frameborder="0">
+                <div class="responsive-video"> <iframe allowfullscreen="allowfullscreen" src="https://player.vimeo.com/video/{{ content[3] }}?api=1&amp;autoplay=0&amp;loop=1&amp;color=ffffff" id="vimeo_player" frameborder="0"></iframe> </div>
+              
+              </a>             
+             
+             <div class="contecnt-uk">
+             <h1 class="video-title">{{ content[2] }}</h1>             
+             </div>
+   </li>    
+             {%endif%}
+
+           {%if tags1 contains '1_download_' %}
+        <li class="col-md-2 col-sm-3 col-xs-6 dwnl">
+              {% assign content9 = tags1 | split: '_' %}            
+              <a class="download" href="https://cdn.shopify.com/s/files/1/2358/5863/files/{{content9[3]}}{%if content9[4] %}_{{content9[4]}}{%endif%}{%if content9[5] %}_{{content9[5]}}{%endif%}" download="{{content9[3]}}_{{content9[4]}}" target="_blank" rel="noopener noreferrer">Download</a>
+   		</li>
+       {%endif%} 
+   
+   {%if tags1 contains '1_objective_' %}
+   <li class="col-md-2 col-sm-3 col-xs-6 ctnt">
+     {% assign content1 = tags1 | split: '_' %} 
+     <p class="objectMain">{{content1[3]}}</p>
+   </li>
+   {%endif%}
+   
+    {%if tags1 contains '2_objective_' %}
+   <li class="col-md-2 col-sm-3 col-xs-6 ctnt2">
+     {% assign content2 = tags1 | split: '_' %} 
+     <p class="objectMain">{{content2[3]}}</p>
+   </li>
+   {%endif%}
+      {%if tags1 contains '3_objective_' %}
+   <li class="col-md-2 col-sm-3 col-xs-6 ctnt3">
+     {% assign content3 = tags1 | split: '_' %} 
+     <p class="objectMain">{{content3[3]}}</p>
+   </li>
+   {%endif%}
+      {%if tags1 contains '4_objective_' %}
+   <li class="col-md-2 col-sm-3 col-xs-6 ctnt4">
+     {% assign content4 = tags1 | split: '_' %} 
+     <p class="objectMain">{{content4[3]}}</p>
+   </li>
+   {%endif%}
+       {%if tags1 contains '5_objective_' %}
+   <li class="col-md-2 col-sm-3 col-xs-6 ctnt5">
+     {% assign content5 = tags1 | split: '_' %} 
+     <p class="objectMain">{{content5[3]}}</p>
+   </li>
+   {%endif%}
+       {%if tags1 contains '6_objective_' %}
+   <li class="col-md-2 col-sm-3 col-xs-6 ctnt6">
+     {% assign content6 = tags1 | split: '_' %} 
+     <p class="objectMain">{{content6[3]}}</p>
+   </li>
+   {%endif%}
+       {%if tags1 contains '7_objective_' %}
+   <li class="col-md-2 col-sm-3 col-xs-6 ctnt7">
+     {% assign content7 = tags1 | split: '_' %} 
+     <p class="objectMain">{{content7[3]}}</p>
+   </li>
+   {%endif%}
+       {%if tags1 contains '8_objective_' %}
+   <li class="col-md-2 col-sm-3 col-xs-6 ctnt8">
+     {% assign content8 = tags1 | split: '_' %} 
+     <p class="objectMain">{{content8[3]}}</p>
+   </li>
+   {%endif%}
+   
+        
+              {% endfor %}
+            
+            <div class="clr"></div>
+          </ul>
+          <ul class="video-product-b">            
+          </ul>
+          {% for tags2 in product.tags  %} 
+          {% if tags2 contains '1_typeform_' %}
+           <div class="center clr"> 
+             {% assign typeform = tags2 | split: '_' %}
+             <a class="href-a results-link btn-2" target="_blank" href="https://uplinkmedia.typeform.com/to/{{typeform[2]}}">take test
+             </a>
+          </div>             
+      {%endif%}  
+           {% endfor %}
+          </div>
+        
+  </section>
+<script type="text/javascript">
+  function selectCallback(variant, selector) {
+    var addToCart = $("#AddToCart"),
+        productPrice = $(".product-right-column #ProductPrice"),
+        comparePrice = $(".product-right-column .price-product-detail .old-price");
+    if (variant) {
+      if (variant.available) {
+        addToCart.removeClass('disabled').removeAttr('disabled');
+        $(addToCart).find("span").text("{{ 'products.product.add_to_cart' | t }}");
+                                       } else {
+                                       addToCart.addClass('disabled').attr('disabled', 'disabled');
+        $(addToCart).find("span").text("{{ 'products.product.sold_out' | t }}");
+                                       }
+                                       productPrice.html(Shopify.formatMoney(variant.price, "{{ shop.money_format }}"));
+                                       if ( variant.compare_at_price > variant.price ) {
+          productPrice.addClass("sale-price")
+          comparePrice
+          .html(Shopify.formatMoney(variant.compare_at_price, "{{ shop.money_format }}"))
+                                    .show();          
+                } else {
+                comparePrice.hide();
+          productPrice.removeClass("sale-price");
+        }        
+        var form = $('#' + selector.domIdPrefix).closest('form');
+        for (var i=0,length=variant.options.length; i<length; i++) {
+          var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] +'"]');
+          if (radioButton.size()) {
+            radioButton.get(0).checked = true;
+          }
+        }
+        updatePricing();
+        {% if settings.enable_multiple_currencies %}
+        Currency.convertAll('{{ shop.currency }}', $('#currencies').val(), 'span.money', 'money_format');
+                            {% endif %}
+                            if (variant.available) {
+          $('.product .availability').html("<p class='available instock'>" + "{{'products.product.available' | t }}" + "</p>");
+                                           } else{
+                                           $('.product .availability').html("<p class='available outstock'>" + "{{'products.product.unavailable' | t }}" + "</p>");
+                                                                            }
+                                                                            } else {
+                                                                            addToCart.addClass('disabled').attr('disabled', 'disabled');
+          $(addToCart).find("span").text("{{ 'products.product.unavailable' | t }}");
+                                         }
+                                         if (variant && variant.featured_image) {
+            console.log("Chạy vào nào 2");
+            var originalImage = $("#view_full_size img");
+            var newImage = variant.featured_image;
+            var element = originalImage[0];
+            Shopify.Image.switchImage(newImage, element, function (newImageSizedSrc, newImage, element) {
+              $('#thumbs_list img').each(function() {
+                var parentThumbImg = $(this).parent();
+                var idProductImage = $(this).parent().data("imageid");
+                if (idProductImage == newImage.id) {
+                  $(this).parent().trigger('click');
+                  return false;
+                }
+              });
+            });
+          }
+        }
+        $(document).ready(function() {
+          new Shopify.OptionSelectors('productSelect', {
+            product: {{ product | json }},              
+            onVariantSelected: selectCallback,
+            enableHistoryState: true
+          });
+          {% if product.available and product.options.size > 1 %}
+          Shopify.linkOptionSelectors({{ product | json }});
+          {% endif %}
+          {% if product.options.size == 1 and product.options.first != 'Title' %}
+          $('.selector-wrapper:eq(0)').prepend('<label for="productSelect-option-0">{{ product.options.first | escape }}</label>');
+                                               {% endif %}
+                                               {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+                                               $('.selector-wrapper').hide();
+          $('.swatch').hide();
+          {% endif %}   
+          {% if product.available == false %}
+          $(".product-right-column .add_to_cart_detail").addClass("disabled").attr("disabled", "disabled");
+          $("#AddToCartText").text("{{ 'products.product.unavailable' | t }}");
+                                   {% endif %}
+                                   $('.more_info_block .page-product-heading li:first, .more_info_block .tab-content section:first').addClass('active');
+        });
+</script>
+
+<!-- 
+{% schema %}
+    {
+  "name": "Product Pages",
+  "settings": [
+{
+      "type": "checkbox",
+      "id": "results_enable",
+      "label": "Set active this"
+    },
+    {
+      "type": "text",
+      "id": "results_link",
+      "label": "results link"
+      
+    },
+    {
+      "type": "text",
+      "id": "results_text",
+      "label": "results text"
+    }
+]
+}
+{% endschema %} -->
+<script>
+  jQuery(document).ready(function(){
+    var download = [];
+    var content = [];
+    var content2 = [];
+    var content3 = [];
+    var content4 = [];
+    var content5 = [];
+    var content6 = [];
+    var content7 = [];
+    var content8 = [];
+    var video = [];
+    
+    jQuery('.dwnl').each(function(index){
+      download[index] = jQuery(this).html();
+    })
+   
+    jQuery('.ctnt').each(function(index){
+      content[index] = jQuery(this).html();
+    })
+    jQuery('.ctnt2').each(function(index){
+      content2[index] = jQuery(this).html();
+    })
+    jQuery('.ctnt3').each(function(index){
+      content3[index] = jQuery(this).html();
+    })
+    jQuery('.ctnt4').each(function(index){
+      content4[index] = jQuery(this).html();
+    })
+    jQuery('.ctnt5').each(function(index){
+      content5[index] = jQuery(this).html();
+    })
+    jQuery('.ctnt6').each(function(index){
+      content6[index] = jQuery(this).html();
+    })
+    jQuery('.ctnt7').each(function(index){
+      content7[index] = jQuery(this).html();
+    })
+    jQuery('.ctnt8').each(function(index){
+      content8[index] = jQuery(this).html();
+    })
+    jQuery('.vdo').each(function(index){
+      video[index] = jQuery(this).html();   	
+    })
+   
+ jQuery('ul.video-product li').hide();
+ 
+    
+    console.log(video);
+    
+   
+ /*jQuery('div.video-product-b').html('<li class="col-md-3 col-sm-4 col-xs-6">'+
+video[0]+content[0]+'<div></div>'+'</a>'+download[0]+'</li>')*/
+ 
+ for(i=0;i<=19;i++){
+
+   if(video[i]==undefined){
+      video[i] = "";
+      }
+   
+   if(content[i]==undefined){
+      content[i] = "";
+      }
+    if(content2[i]==undefined){
+      content2[i] = "";
+      }
+    if(content3[i]==undefined){
+      content3[i] = "";
+      }
+   if(content4[i]==undefined){
+      content4[i] = "";
+      }
+   if(content5[i]==undefined){
+      content5[i] = "";
+      }
+   if(content6[i]==undefined){
+      content6[i] = "";
+      }
+   if(content7[i]==undefined){
+      content7[i] = "";
+      }
+   if(content8[i]==undefined){
+      content8[i] = "";
+      }
+   
+   if(download[i]==undefined){
+      download[i] = "";
+      }
+   
+   
+ jQuery('ul.video-product-b').append('<li class="col-md-3 col-sm-4 col-xs-6">'+
+video[i]+'<div class="para-6">'+content[i]+content2[i]+content3[i]+content4[i]+content5[i]+content6[i]+content7[i]+content8[i]+'</div>'+download[i]+'</li>')
+ 	
+ 
+ $(".fancybox")
+    .attr('rel', 'gallery')
+    .fancybox({
+      openEffect  : 'none',
+      closeEffect : 'none',
+      nextEffect  : 'none',
+      prevEffect  : 'none',
+      width   	  : '800px',
+      height	  : '450px',
+      responsive: true,
+      padding     : 0,
+      margin      : [20, 60, 20, 60] // Increase left/right margin
+    });
+ }
+  });
+  
+  
+</script>
+
+ 
+<style> .video-product-b li:nth-child(4n+5) { clear:left; } </style>
